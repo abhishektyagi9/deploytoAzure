@@ -12,17 +12,6 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
     steps:
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
