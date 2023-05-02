@@ -12,7 +12,10 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    
     steps:
+      - uses: actions/checkout@master
+      
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
